@@ -3,25 +3,34 @@ import { Link } from "react-router-dom";
 import useForm from "react-hook-form";
 import NavBar from "./NavBar.js";
 import "./LoginPage.css";
+import { useHistory } from "react-router-dom";
 
 function LoginPage() {
+  let history = useHistory();
   // React-hook-form,handleSubmit is the function,errors object
   //is for showing errors.
   const { register, handleSubmit, errors } = useForm();
+
   const onSubmit = data => {
-    console.log(data);
+    console.log(data); //username and password is logged into the console
+    //uses the useHistory
+    history.push("/welcome"); //Redirect to welcome page
   };
 
   return (
-    <div className="bg-image">
+    <div>
       {/* Form */}
-      <div className="container container-login">
-        <div className="form-group">
-          <h1 className="text-center font-weight-light pt-3">Login</h1>
-          <hr />
+      <div className="container">
+        <div className="container-login">
+          <h1 className="text-center font-weight-light pt-3 text-secondary">
+            Login
+          </h1>
+          <hr className="bg-primary mt-4" />
           <form className="mt-4 pt-3" onSubmit={handleSubmit(onSubmit)}>
             <div className="form-group ">
-              <label for="username">Username:</label>
+              <label className="text-secondary" for="username">
+                Username:
+              </label>
               <br />
               <input
                 type="text"
@@ -42,7 +51,9 @@ function LoginPage() {
               )}
             </div>
             <div className="form-group">
-              <label for="password">Password:</label>
+              <label className="text-secondary" for="password">
+                Password:
+              </label>
               <br />
               <input
                 type="password"
@@ -70,7 +81,7 @@ function LoginPage() {
                 <br />
                 <button
                   type="submit"
-                  className="btn btn-primary mt-4 pl-4 pr-4"
+                  className="btn btn-primary mt-4 pl-4 pr-4 button-login"
                   ref={register}
                 >
                   Login

@@ -1,14 +1,6 @@
-/* .form-1,
-.form-2 {
-  border: 1px solid rgb(223, 216, 216);
-  padding: 20px;
-  position: relative;
-}
-
-.input {
-  width: 30%;
-}
-
-.form-2 {
+.box {
+  border: 1px solid rgb(158, 151, 151);
+  padding: 10px;
   margin-top: 20px;
-} */
+  margin-bottom: 20px;
+}
