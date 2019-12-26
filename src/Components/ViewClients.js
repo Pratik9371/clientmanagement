@@ -10,8 +10,10 @@ class ViewCLient extends Component {
       <React.Fragment>
         <NavBar />
         <div className="container mt-5">
-          <h1 className="text-secondary pb-3">Clients Table</h1>
-          <table className="table table-bordered">
+          <h1 className="text-secondary font-weight-light pb-3">
+            Clients Table
+          </h1>
+          <table className="table table-bordered table-form">
             <thead>
               <tr>
                 <th>Sr No.</th>

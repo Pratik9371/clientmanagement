@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import useForm from "react-hook-form";
-import NavBar from "./NavBar.js";
 import "./LoginPage.css";
 import { useHistory } from "react-router-dom";
 
@@ -18,9 +17,9 @@ function LoginPage() {
   };
 
   return (
-    <div>
+    <main className="bg-image">
       {/* Form */}
-      <div className="container">
+      <div className="container pt-5">
         <div className="container-login">
           <h1 className="text-center font-weight-light pt-3 text-secondary">
             Login
@@ -75,7 +74,7 @@ function LoginPage() {
             </div>
             <div className="row">
               <div className="col text-center pt-4">
-                <Link to="/form">
+                <Link to="/">
                   <a href="#">Create an account</a>
                 </Link>
                 <br />
@@ -91,7 +90,7 @@ function LoginPage() {
           </form>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 

@@ -9,7 +9,9 @@ import About from "./Components/About.js";
 import NavBar from "./Components/NavBar.js";
 import ViewClients from "./Components/ViewClients.js";
 import Welcome from "./Components/Welcome.js";
-import Background from "./Components/Background";
+import Orders from "./Components/Orders.js";
+import OrdersForm from "./Components/OrdersForm.js";
+import Sample from "./Components/Sample.js";
 
 function App() {
   return (
@@ -23,7 +25,9 @@ function App() {
           <Route path="/about" component={About}></Route>
           <Route path="/viewclients" component={ViewClients}></Route>
           <Route path="/welcome" component={Welcome}></Route>
-          <Route path="/background" component={Background}></Route>
+          <Route path="/orders" component={Orders}></Route>
+          <Route path="/ordersform" component={OrdersForm}></Route>
+          <Route path="/sample" component={Sample}></Route>
         </Switch>
       </div>
     </Router>

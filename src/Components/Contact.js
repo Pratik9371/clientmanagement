@@ -1,11 +1,15 @@
 import React, { Component } from "react";
+import NavBar from "./NavBar.js";
 
 class Contact extends Component {
   state = {};
   render() {
     return (
       <div>
-        <h1>Contact Us</h1>
+        <NavBar />
+        <h1 className="text-secondary font-weight-light text-center mt-5">
+          Contact Us
+        </h1>
       </div>
     );
   }

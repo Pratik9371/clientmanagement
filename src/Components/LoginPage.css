@@ -1,6 +1,6 @@
 .container-login {
   margin: auto;
-  margin-top: 50px;
+  /* margin-top: 50px; */
   width: 350px;
   height: 500px;
   background-color: white;
@@ -11,4 +11,20 @@
 
 .button-login {
   width: 100%;
+}
+
+.bg-image {
+  background-image: url("./bg2.png");
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-welcome {
+  background-image: url("./bg-welcome.jpg");
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

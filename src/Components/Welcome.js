@@ -2,16 +2,19 @@ import React, { Component } from "react";
 import NavBar from "./NavBar.js";
 
 class Welcome extends Component {
-  state = {};
   render() {
     return (
-      <div>
-        <NavBar />;
+      <main className="bg-welcome">
+        <NavBar />
         <div>
-          <h2 className="text-center">Welcome, Username</h2>
+          <h1 className="text-center font-weight-light mt-5">
+            Welcome,{" "}
+            <span className="text-secondary">
+              <i>Username</i>
+            </span>
+          </h1>
         </div>
-        <div></div>
-      </div>
+      </main>
     );
   }
 }

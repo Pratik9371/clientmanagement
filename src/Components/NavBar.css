@@ -1,0 +1,14 @@
+.nav-links {
+  padding-right: 30px;
+  color: skyblue;
+  color: rgb(139, 139, 139);
+}
+
+.nav-links:hover {
+  text-decoration: none;
+  color: pink;
+}
+
+.nav-links-active {
+  color: black;
+}
