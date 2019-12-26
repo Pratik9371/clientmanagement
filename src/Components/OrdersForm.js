@@ -22,7 +22,11 @@ const OrdersForm = () => {
   };
 
   //function for deleting the inputs row
-  const deleteRow = () => {};
+  const deleteRow = rowId => {
+    const arr = List.filter(list => list.id != rowId);
+    updateList(arr);
+    console.log(arr);
+  };
 
   //function for generating random string(used for unique id)
   const randomString = length => {
