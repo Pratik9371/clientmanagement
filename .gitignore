@@ -4,6 +4,7 @@
 /react-client/node_modules
 /.pnp
 .pnp.js
+/API/.vs
 
 # testing
 /coverage
