@@ -14,8 +14,8 @@ namespace CMS_Web_API.Controllers
     {
         // GET: api/Orders
         //Declare the sqlCoection and commands objects here
-        private SqlConnection;
-        private SqlDataAdapter;
+        private SqlConnection con;
+        //private SqlDataAdapter adapter;
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
@@ -28,9 +28,21 @@ namespace CMS_Web_API.Controllers
         }
 
         // POST: api/Orders
-        public void Post(Orders value)
+        [HttpPost]
+        public void Post([FromBody]Orders value)
         {
-            Console.Write(value);
+            con = new SqlConnection("Data Source=PRATIK\\SQLEXPRESS01; Initial Catalog = CMS; integrated security=True");
+            var query = "insert into orders(Cust_id, Date) values(@Cust_id, @Date)";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Parameters.AddWithValue("@Cust_id", value.Cust_id);
+            cmd.Parameters.AddWithValue("@Date", value.Date);
+            con.Open();
+            int OrderId = Convert.ToInt32(cmd.ExecuteScalar());
+            //for ()
+            //{
+
+            //}
+            con.Close();
         }
 
         // PUT: api/Orders/5
