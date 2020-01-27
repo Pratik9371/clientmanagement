@@ -38,11 +38,20 @@ namespace CMS_Web_API.Controllers
             cmd.Parameters.AddWithValue("@Date", value.Date);
             con.Open();
             int OrderId = Convert.ToInt32(cmd.ExecuteScalar());
-            //for ()
-            //{
-
-            //}
-            con.Close();
+            if (value.Order_Details.Count > 0) {
+                value.Order_Details.
+                for (int j = 0; j < value.Order_Details.Count; j++)
+                {
+                    string detailsQuery = "insert into order_details (order_id,item,quantity,cost) values(@order_id,@item,@quantity,@cost)";
+                    SqlCommand insertcommand = new SqlCommand(query, con);
+                    insertcommand.Parameters.AddWithValue("@order_id", OrderId);
+                    insertcommand.Parameters.AddWithValue("@item", value.Order_Details[j].Item);
+                    insertcommand.Parameters.AddWithValue("@quantity", value.Order_Details[j].Quantity);
+                    insertcommand.Parameters.AddWithValue("@cost", value.Order_Details[j].Cost);
+                    insertcommand.ExecuteNonQuery();
+                }
+            }
+        con.Close();
         }
 
         // PUT: api/Orders/5
