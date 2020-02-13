@@ -11,7 +11,7 @@ namespace CMS_Web_API.Models
         public string Cust_id { get; set; }
         public string Date { get; set; }
         public string Order_id { get; set; }
-        public  ICollection<Order_details> Order_Details { get; set; }   // Icollection is used for array , collection of items
+        public  List<Order_details> Order_Details { get; set; }   // Icollection is used for array , collection of items
     }
     public class Order_details {
         public string Order_Details_id { get; set; }

@@ -166,3 +166,6 @@ C:\Users\Pratik Patil\Documents\just\Project\clientmanagement\API\CMS Web API\bi
 C:\Users\Pratik Patil\Documents\just\Project\clientmanagement\API\CMS Web API\bin\Antlr3.Runtime.pdb
 C:\Users\Pratik Patil\Documents\just\Project\clientmanagement\API\CMS Web API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Pratik Patil\Documents\just\Project\clientmanagement\API\CMS Web API\obj\Debug\CMS Web API.csproj.CopyComplete
+C:\Users\Pratik Patil\Documents\just\Project\clientmanagement\API\CMS Web API\bin\System.Web.Cors.dll
+C:\Users\Pratik Patil\Documents\just\Project\clientmanagement\API\CMS Web API\bin\System.Web.Http.Cors.dll
+C:\Users\Pratik Patil\Documents\just\Project\clientmanagement\API\CMS Web API\bin\System.Web.Http.Cors.xml

@@ -7,10 +7,12 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace CMS_Web_API.Controllers
 {
     [Route("api/clients")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ClientController : ApiController
     {
         // GET: api/Client
@@ -39,11 +41,13 @@ namespace CMS_Web_API.Controllers
         }
 
         // GET: api/Client/5
-        public IEnumerable<Client> Get(int id)
+        [HttpGet]
+        [Route("api/clients/{clientid}")]
+        public IEnumerable<Client> Get(int clientid)
         {
             con = new SqlConnection("Data Source=PRATIK\\SQLEXPRESS01; Initial Catalog = CMS; integrated security=True");
             DataTable dt = new DataTable();
-            var query = "select * from Clients_table where id="+id;
+            var query = "select * from Clients_table where Cust_id="+clientid;
             adapter = new SqlDataAdapter(query, con);
             adapter.Fill(dt);
             //here we are creating a list of students object and setting its capacity to dt.Rows.Count
