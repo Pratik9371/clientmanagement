@@ -27,7 +27,6 @@ function App() {
           <Route path="/welcome" component={Welcome}></Route>
           <Route path="/orders" component={Orders}></Route>
           <Route path="/ordersform" component={OrdersForm}></Route>
-          <Route path="/sample" component={Sample}></Route>
         </Switch>
       </div>
     </Router>

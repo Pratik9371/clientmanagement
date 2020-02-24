@@ -1,11 +1,31 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 import NavBar from "./NavBar.js";
 
 class ViewCLient extends Component {
-  state = {};
+  state = {
+    clients: []
+  };
+
+  componentDidMount() {
+    fetch("https://localhost:44313/api/clients")
+      .then(res => res.json()) //res is response
+      .then(data => {
+        this.setState({ clients: data });
+      })
+      .catch(console.log);
+  }
+
+  //Edit client
+  editClient = () => {
+    window.confirm("are you sure?");
+  };
+
+  //Delete client
+  deleteClient = () => {};
 
   render() {
+    const { clients } = this.state;
     return (
       <React.Fragment>
         <NavBar />
@@ -13,43 +33,42 @@ class ViewCLient extends Component {
           <h1 className="text-secondary font-weight-light pb-3">
             Clients Table
           </h1>
-          <table className="table table-bordered table-form">
+          <table className="table table-bordered">
             <thead>
               <tr>
-                <th>Sr No.</th>
+                <th>Cust Id</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone</th>
                 <th>Address</th>
                 <th>Pin Code</th>
+                <th>Options</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>John</td>
-                <td>John@gmail.com</td>
-                <td>1234567890</td>
-                <td>new york</td>
-                <td>401240</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Roman</td>
-                <td>Roman@gmail.com</td>
-                <td>2561358210</td>
-                <td>San fancisco</td>
-                <td>401340</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Rock</td>
-                <td>Rock@gmail.com</td>
-                <td>1234534890</td>
-                <td>chicago</td>
-                <td>401440</td>
-              </tr>
-            </tbody>
+            {clients.map(client => (
+              <tbody>
+                <tr>
+                  <td>{client.Cust_id}</td>
+                  <td>{client.Name}</td>
+                  <td>{client.Email}</td>
+                  <td>{client.Phone}</td>
+                  <td>{client.Address}</td>
+                  <td>{client.Pincode}</td>
+                  <Link to={"clients?id=" + client.Cust_id}>
+                    <button
+                      type="button"
+                      className="btn btn-primary m-2"
+                      onClick={this.editClient}
+                    >
+                      Edit
+                    </button>
+                  </Link>{" "}
+                  <button type="button" className="btn btn-danger m-2">
+                    Delete
+                  </button>
+                </tr>
+              </tbody>
+            ))}
           </table>
           <div>
             <Link to="/form">
