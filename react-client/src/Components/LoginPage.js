@@ -73,7 +73,7 @@ class LoginPage extends Component {
         Displayname: this.state.username
       };
 
-      this.UserService.saveUser(data);
+      this.UserService.checkUser(data);
     }
   };
 
