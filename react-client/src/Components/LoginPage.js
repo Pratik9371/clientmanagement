@@ -4,12 +4,14 @@ import useForm from "react-hook-form";
 import "./LoginPage.css";
 import { useHistory } from "react-router-dom";
 import UserService from "./UserService";
+import Welcome from "./Welcome";
 
 const initailState = {
   username: "",
   password: "",
   usernameError: "",
-  passwordError: ""
+  passwordError: "",
+  loggedIn: false
 };
 
 class LoginPage extends Component {
@@ -58,9 +60,6 @@ class LoginPage extends Component {
     e.preventDefault();
     const isValid = this.validate();
     if (isValid) {
-      this.setState({
-        loggedIn: true
-      });
       console.log(this.state);
       //Clear form
       this.setState(initailState);
@@ -73,7 +72,16 @@ class LoginPage extends Component {
         Displayname: this.state.username
       };
 
-      this.UserService.checkUser(data);
+      let handleResponse = this.UserService.checkUser(data);
+      handleResponse
+        .then(res => res.json())
+        .then(res => {
+          if (res.length > 0) {
+            this.props.history.push("/welcome");
+          } else {
+            alert("incorrect username or password");
+          }
+        });
     }
   };
 

@@ -1,9 +1,10 @@
-import React, { Component } from "react";
+import React, { Component, componentDidMount } from "react";
 import useForm from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./ClientForm.css";
 import NavBar from "./NavBar";
 import ClientService from "./ClientService";
+import { querystring } from "query-string";
 
 const initialState = {
   name: "",
@@ -24,11 +25,42 @@ class ClientForm extends Component {
   constructor(props) {
     super(props);
     this.ClientService = new ClientService();
+    this.user = this.props.match.params;
   }
 
   handleChnage = (e, fieldName) => {
     this.setState({ [fieldName]: e.target.value });
   };
+
+  // const user = this.props.match.params;
+  /**
+   *  read id of the user
+   *  get user data for this id throgh api
+   *  read the data recieved fom the api server
+   *  set teh data into the form fields
+   *
+   * after this user will get the form filled with the details saved in db, instead of blank form
+   */
+
+  componentDidMount() {
+    //if the id is undefined then /form will open with empty fields and if it is provided it will fetch the api.
+    if (this.user.id === undefined) {
+      this.state = initialState;
+    } else {
+      fetch(`https://localhost:44313/api/clients/${this.user.id}`)
+        .then(res => res.json())
+        //Setting values gettings from db to the fields
+        .then(result => {
+          this.setState({
+            name: result[0].Name,
+            email: result[0].Email,
+            phone: result[0].Phone,
+            address: result[0].Address,
+            pincode: result[0].Pincode
+          });
+        });
+    }
+  }
 
   //Function for validating the fields
   validate = () => {
@@ -91,7 +123,15 @@ class ClientForm extends Component {
       };
 
       //Save button(will be saved to the DB)
-      this.ClientService.SaveClient(data);
+      // this.ClientService.SaveClient(data);
+
+      //if user.id is undefined then set save button to saveClient api else updateClient api
+      const id = this.user.id;
+      if (id === undefined) {
+        this.ClientService.SaveClient(data);
+      } else {
+        this.ClientService.updateClient(data, id);
+      }
     }
   };
 

@@ -9,9 +9,8 @@ import About from "./Components/About.js";
 import NavBar from "./Components/NavBar.js";
 import ViewClients from "./Components/ViewClients.js";
 import Welcome from "./Components/Welcome.js";
-import Orders from "./Components/Orders.js";
+import Services from "./Components/Services.js";
 import OrdersForm from "./Components/OrdersForm.js";
-import Sample from "./Components/Sample.js";
 
 function App() {
   return (
@@ -21,11 +20,11 @@ function App() {
         <Switch>
           <Route path="/" exact component={LoginPage}></Route>
           <Route path="/form" component={ClientForm}></Route>
+          <Route path="/client/:id" component={ClientForm}></Route>
           <Route path="/contact" component={Contact}></Route>
-          <Route path="/about" component={About}></Route>
           <Route path="/viewclients" component={ViewClients}></Route>
           <Route path="/welcome" component={Welcome}></Route>
-          <Route path="/orders" component={Orders}></Route>
+          <Route path="/services" component={Services}></Route>
           <Route path="/ordersform" component={OrdersForm}></Route>
         </Switch>
       </div>

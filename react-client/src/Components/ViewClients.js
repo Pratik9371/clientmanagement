@@ -1,28 +1,41 @@
 import React, { Component } from "react";
-import { Link, Route } from "react-router-dom";
+import { Link, Route, Redirect } from "react-router-dom";
 import NavBar from "./NavBar.js";
+import ClientService from "./ClientService.js";
 
 class ViewCLient extends Component {
-  state = {
-    clients: []
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      clients: []
+    };
+    this.ClientService = new ClientService();
+  }
 
   componentDidMount() {
-    fetch("https://localhost:44313/api/clients")
+    this.getClients();
+  }
+
+  deleteClient = id => {
+    window.confirm("Are you sure?"); // use Window confirm() Method here
+    const response = this.ClientService.deleteClient(id);
+    response
+      .then(res => res.text())
+      .then(res => {
+        //  if (res == true) {
+        this.getClients();
+        //}
+      });
+  };
+
+  getClients() {
+    this.ClientService.getAllClients()
       .then(res => res.json()) //res is response
       .then(data => {
         this.setState({ clients: data });
       })
       .catch(console.log);
   }
-
-  //Edit client
-  editClient = () => {
-    window.confirm("are you sure?");
-  };
-
-  //Delete client
-  deleteClient = () => {};
 
   render() {
     const { clients } = this.state;
@@ -45,8 +58,8 @@ class ViewCLient extends Component {
                 <th>Options</th>
               </tr>
             </thead>
-            {clients.map(client => (
-              <tbody>
+            {clients.map((client, i) => (
+              <tbody key={i}>
                 <tr>
                   <td>{client.Cust_id}</td>
                   <td>{client.Name}</td>
@@ -54,16 +67,16 @@ class ViewCLient extends Component {
                   <td>{client.Phone}</td>
                   <td>{client.Address}</td>
                   <td>{client.Pincode}</td>
-                  <Link to={"clients?id=" + client.Cust_id}>
-                    <button
-                      type="button"
-                      className="btn btn-primary m-2"
-                      onClick={this.editClient}
-                    >
+                  <Link to={"client/" + client.Cust_id}>
+                    <button type="button" className="btn btn-primary m-2">
                       Edit
                     </button>
                   </Link>{" "}
-                  <button type="button" className="btn btn-danger m-2">
+                  <button
+                    type="button"
+                    className="btn btn-danger m-2"
+                    onClick={() => this.deleteClient(client.Cust_id)}
+                  >
                     Delete
                   </button>
                 </tr>

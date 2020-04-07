@@ -42,21 +42,31 @@ class NavBar extends Component {
             <li>
               <NavLink
                 exact
-                to="/about"
+                to="/viewclients"
                 className="nav-links"
                 activeClassName="nav-links-active"
               >
-                <i class="fa fa-user pr-1"></i>About
+                <i class="fa fa-user pr-1"></i>View Clients
               </NavLink>
             </li>
             <li>
               <NavLink
                 exact
-                to="/viewclients"
+                to="/ordersform"
                 className="nav-links"
                 activeClassName="nav-links-active"
               >
-                <i class="fa fa-street-view pr-1"></i>View Clients
+                <i class="fa fa-plus pr-1"></i>Add Orders
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                exact
+                to="/services"
+                className="nav-links"
+                activeClassName="nav-links-active"
+              >
+                <i class="fa fa-street-view pr-1"></i>Services
               </NavLink>
             </li>
             <li>
