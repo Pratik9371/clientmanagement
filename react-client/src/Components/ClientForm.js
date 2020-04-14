@@ -16,7 +16,7 @@ const initialState = {
   emailError: "",
   phoneError: "",
   addressError: "",
-  pincodeError: ""
+  pincodeError: "",
 };
 
 class ClientForm extends Component {
@@ -48,15 +48,15 @@ class ClientForm extends Component {
       this.state = initialState;
     } else {
       fetch(`https://localhost:44313/api/clients/${this.user.id}`)
-        .then(res => res.json())
+        .then((res) => res.json())
         //Setting values gettings from db to the fields
-        .then(result => {
+        .then((result) => {
           this.setState({
             name: result[0].Name,
             email: result[0].Email,
             phone: result[0].Phone,
             address: result[0].Address,
-            pincode: result[0].Pincode
+            pincode: result[0].Pincode,
           });
         });
     }
@@ -98,14 +98,14 @@ class ClientForm extends Component {
         nameError,
         phoneError,
         addressError,
-        pincodeError
+        pincodeError,
       });
       return false; //we returned false so it wasn't valid
     }
     return true; //true because we don't have any errors
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
     const isValid = this.validate();
     if (isValid) {
@@ -119,7 +119,7 @@ class ClientForm extends Component {
         Email: this.state.email,
         Phone: this.state.phone,
         Address: this.state.address,
-        Pincode: this.state.pincode
+        Pincode: this.state.pincode,
       };
 
       //Save button(will be saved to the DB)
@@ -150,7 +150,7 @@ class ClientForm extends Component {
                     className="form-control"
                     placeholder="Enter your name"
                     name="name"
-                    onChange={e => this.handleChnage(e, "name")}
+                    onChange={(e) => this.handleChnage(e, "name")}
                     value={this.state.name}
                   ></input>
                   {/* Name Errors */}
@@ -163,7 +163,7 @@ class ClientForm extends Component {
                     className="form-control"
                     placeholder="Enter your email"
                     name="email"
-                    onChange={e => this.handleChnage(e, "email")}
+                    onChange={(e) => this.handleChnage(e, "email")}
                     value={this.state.email}
                   ></input>
                   {/* Email Errors */}
@@ -176,7 +176,7 @@ class ClientForm extends Component {
                     className="form-control"
                     placeholder="Enter your phone"
                     name="phone"
-                    onChange={e => this.handleChnage(e, "phone")}
+                    onChange={(e) => this.handleChnage(e, "phone")}
                     value={this.state.phone}
                   ></input>
                   {/* Phone Errors */}
@@ -193,7 +193,7 @@ class ClientForm extends Component {
                     className="form-control"
                     placeholder="Enter your address"
                     name="address"
-                    onChange={e => this.handleChnage(e, "address")}
+                    onChange={(e) => this.handleChnage(e, "address")}
                     value={this.state.address}
                   ></input>
                   {/* Address Errors */}
@@ -208,7 +208,7 @@ class ClientForm extends Component {
                     className="form-control"
                     placeholder="Enter your pincode"
                     name="pin"
-                    onChange={e => this.handleChnage(e, "pincode")}
+                    onChange={(e) => this.handleChnage(e, "pincode")}
                     value={this.state.pincode}
                   ></input>
                   {/* Pin Errors */}
@@ -216,12 +216,14 @@ class ClientForm extends Component {
                 </div>
               </div>
             </div>
-            <button
-              type="reset"
-              className="btn btn-primary ml-3 mt-3 float-right"
-            >
-              Cancel
-            </button>
+            <Link to="/viewclients">
+              <button
+                type="reset"
+                className="btn btn-primary ml-3 mt-3 float-right"
+              >
+                Cancel
+              </button>
+            </Link>
             <button type="submit" className="btn btn-primary mt-3 float-right">
               Save
             </button>
