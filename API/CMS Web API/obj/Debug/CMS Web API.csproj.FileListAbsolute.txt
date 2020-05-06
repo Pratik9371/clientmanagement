@@ -169,3 +169,9 @@ C:\Users\Pratik Patil\Documents\just\Project\clientmanagement\API\CMS Web API\ob
 C:\Users\Pratik Patil\Documents\just\Project\clientmanagement\API\CMS Web API\bin\System.Web.Cors.dll
 C:\Users\Pratik Patil\Documents\just\Project\clientmanagement\API\CMS Web API\bin\System.Web.Http.Cors.dll
 C:\Users\Pratik Patil\Documents\just\Project\clientmanagement\API\CMS Web API\bin\System.Web.Http.Cors.xml
+C:\Users\Pratik Patil\Documents\just\Project\clientmanagement\API\CMS Web API\bin\BouncyCastle.Crypto.dll
+C:\Users\Pratik Patil\Documents\just\Project\clientmanagement\API\CMS Web API\bin\MailKit.dll
+C:\Users\Pratik Patil\Documents\just\Project\clientmanagement\API\CMS Web API\bin\MimeKit.dll
+C:\Users\Pratik Patil\Documents\just\Project\clientmanagement\API\CMS Web API\bin\BouncyCastle.Crypto.xml
+C:\Users\Pratik Patil\Documents\just\Project\clientmanagement\API\CMS Web API\bin\MailKit.xml
+C:\Users\Pratik Patil\Documents\just\Project\clientmanagement\API\CMS Web API\bin\MimeKit.xml
