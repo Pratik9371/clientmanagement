@@ -3,19 +3,18 @@
 }
 
 .first-row {
-  background-color: aquamarine;
+  background-color: rgb(63, 168, 133);
   margin-top: 80px;
-  padding: 50px;
+  padding: 100px;
 }
 
 .misson-row {
   background-color: rgb(250, 246, 246);
-  height: 300px;
   padding: 100px;
 }
 
 .fourth-row {
-  background-color: aquamarine;
+  background-color: rgb(63, 168, 133);
   height: 800px;
   padding: 50px;
 }
@@ -26,7 +25,7 @@
 } */
 
 .btn {
-  color: aquamarine;
+  color: rgb(63, 168, 133);
 }
 
 .box {

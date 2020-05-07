@@ -9,7 +9,10 @@ class Navbar extends Component {
       <nav className="navbar navbar-expand-md bg-light navbar-light fixed-top p-3">
         {/* Brand Name   */}
         <a className="navbar-brand" href="#">
-          <h1 className="font-weight-light">Shipperspoint</h1>
+          <h1 className="font-weight-light">
+            <span style={{ color: "rgb(63, 168, 133)" }}>Shippers</span>
+            <span className="text-secondary">point</span>
+          </h1>
         </a>
         {/* Collapase Button */}
         <button
@@ -36,7 +39,7 @@ class Navbar extends Component {
             <li>
               <NavLink
                 exact
-                to="/about us"
+                to="/about-us"
                 className="nav-links"
                 activeClassName="nav-links-active"
               >

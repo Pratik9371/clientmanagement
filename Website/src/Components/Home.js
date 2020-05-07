@@ -12,19 +12,21 @@ class Home extends Component {
     return (
       <div className="container-fluid">
         <div className="row first-row justify-content-center">
-          <div className="col-md-8 text-light">
-            <h1 className="font-weight-bolder">
+          <div className="col-lg-6 text-light">
+            <h1 style={{ fontSize: "80px" }}>
               Ready to get <br />
               started?
             </h1>
-            <p>Sign up to receive the latest news</p>
+            <p style={{ fontSize: "20px" }}>
+              Sign up to receive the latest news
+            </p>
           </div>
-          <div className="col-md-4">
+          <div className="col-md-6">
             <img
               src={homeImage}
               className="image-fluid"
-              height="500"
-              width="500"
+              height="400"
+              width="400"
               alt="image"
               className="float-right"
             />
@@ -342,7 +344,7 @@ class Home extends Component {
         <div className="row pt-5">
           <div
             className="col-md-12 text-center text-light p-5"
-            style={{ backgroundColor: " aquamarine", height: "200px" }}
+            style={{ backgroundColor: " rgb(63, 168, 133)", height: "200px" }}
           >
             <h1>Sign up and get a discount</h1>
             <p>
@@ -385,7 +387,7 @@ class Home extends Component {
           </div>
         </div>
         {/* Footer */}
-        <div className="row p-5">
+        <div className="row p-5 misson-row">
           <div className="col-md-3">
             <h1>airi.</h1>
             <p>
