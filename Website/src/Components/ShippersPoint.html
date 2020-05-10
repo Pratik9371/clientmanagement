@@ -13,6 +13,7 @@
   />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="ShippersPoint.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
   <body>
     <div class="container-fluid">
@@ -81,12 +82,22 @@
         </div>
       </nav>
 
-
-        <div class="row first-row justify-content-center">
+      <div class="row first-row justify-content-center">
           <div class="col-sm-6 text-light">
             <h1>
               Ready to get started?
             </h1>
+           <div class="input-group mt-4">
+              <input type="text" class="form-control" placeholder="Enter your email id">
+            <div class="buttonHolder">
+              <div class="vButtonFlipper">
+                <!-- Standard button -->
+                <button type="button" class="btn button1">Get started for free</button>
+                <!-- Indicates a successful or positive action -->
+                <button type="button" class="btn button2">Enter OTP</button>
+            </div>
+            </div>
+          </div>     
             <p>
               Sign up to receive the latest news
             </p>
@@ -94,7 +105,7 @@
           <div class="col-sm-6">
             <img
               src="Images/homeImage.png"
-              class="image-fluid"
+              class="image-fluid top-image"
               height="500"
               width="500"
               alt="image"
@@ -102,6 +113,7 @@
             />
           </div>
         </div>
+
         <div class="row">
           <div class="col-md-12 misson-row mobile-display">
             <h6 class="text-center text-success">OUR MISSION</h6> <br />
@@ -149,6 +161,7 @@
           <iframe
             width="1012"
             height="500"
+            class="video"
             src="https://www.youtube.com/embed/9uOETcuFjbE"
             frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -164,6 +177,8 @@
               height="500"
               width="500"
               alt="image"
+              data-aos="fade-right"
+              data-aos-duration="2000"
             ></img>
           </div>
 
@@ -260,11 +275,13 @@
               height="500"
               width="500"
               alt="image"
+              data-aos="fade-left"
+              data-aos-duration="3000"
             />
           </div>
         </div>
 
-        <div class="text-center p-5 mobile-display">
+        <div class="text-center mobile-display our-plans">
           <h1>Our Plans</h1>
           <p>Simple pricig. Great products</p>
         <div class="row">
@@ -391,10 +408,11 @@
         </div>
         </div>
         <!-- Our team -->
-        <div class="text-center white-box">
-            <h1 class="pb-3">Our team</h1>
-            <p>Meet some of our staff</p>
-          <div class="row ">
+       <div class="row text-center mobile-display our-team">
+        <div class="col-md-12">
+          <h1 class="pb-3">Our team</h1>
+          <p>Meet some of our staff</p>
+        </div>           
             <div class="col-md-3 box">
               <img src="Images/TeamMember.png" width="100%" />
               <h4>John Doe</h4>
@@ -410,20 +428,7 @@
               <h4>John Doe</h4>
               <p>Designer</p>
             </div>
-          </div>
         </div>
-
-        <!-- <div class="row signup-div" style="background-color: rgb(63, 199, 154); padding: 100px;";>
-          <div
-            class="col-md-12 text-center text-light p-5"
-          >
-            <h1>Sign up and get a discount</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-              tellus.
-            </p>
-          </div>
-        </div> -->
 
         <div class="row theme-color signup-div">
           <div class="col-sm-12 text-center">
@@ -532,5 +537,22 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+      <script>
+        $(document).ready(function () {
+          $(".hButtonFlipper").click(function () {
+            $(this).toggleClass("flipped");
+          });
+          $(".foldingButton").click(function () {
+            $(this).toggleClass("fold");
+          });
+          $(".vButtonFlipper").click(function () {
+            $(this).toggleClass("flipped");
+          });
+        });
+      </script>
   </body>
 </html>
