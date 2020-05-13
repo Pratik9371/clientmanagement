@@ -88,13 +88,13 @@
               Ready to get started?
             </h1>
            <div class="input-group mt-4">
-              <input type="text" class="form-control" placeholder="Enter your email id">
+              <input type="text" class="form-control" id="email" placeholder="Enter your email id">
             <div class="buttonHolder">
               <div class="vButtonFlipper">
                 <!-- Standard button -->
-                <button type="button" class="btn button1">Get started for free</button>
+                <button type="button" class="btn button1" id="addEmail">Get started for free</button>
                 <!-- Indicates a successful or positive action -->
-                <button type="button" class="btn button2">Enter OTP</button>
+                <button type="button" class="btn button2" id="otp">Enter OTP</button>
             </div>
             </div>
           </div>     
@@ -541,18 +541,10 @@
     <script>
       AOS.init();
     </script>
-      <script>
-        $(document).ready(function () {
-          $(".hButtonFlipper").click(function () {
-            $(this).toggleClass("flipped");
-          });
-          $(".foldingButton").click(function () {
-            $(this).toggleClass("fold");
-          });
-          $(".vButtonFlipper").click(function () {
-            $(this).toggleClass("flipped");
-          });
-        });
-      </script>
+      <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"></script>
+      <script src="script.js"></script>
   </body>
 </html>
