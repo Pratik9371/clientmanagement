@@ -186,11 +186,6 @@ body {
     flex-direction: column;
   }
   .buttonHolder {
-    margin-top: 10px;
-    width: 100%;
-  }
-  .video {
-    width: 350px;
-    height: 350px;
+    margin-top: 20px;
   }
 }
