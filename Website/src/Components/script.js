@@ -1,22 +1,20 @@
 $(function () {
-  var $email = $("#email");
-  var $otp = $("#otp");
+  var $inputfield = $("#email");
+  var $otpButton = $("#otp");
 
   $("#addEmail").on("click", function () {
-    if ($email.val() == "") {
+    if ($inputfield.val() == "") {
       alert("Email is required");
     } else {
       //Flip the button.
-      $(".vButtonFlipper").click(function () {
-        $(this).toggleClass("flipped");
-      });
+      $(".vButtonFlipper").addClass("flipped");
 
       //Post request for sending email.
       $.ajax({
         type: "POST",
         url:
           "http://app.pointtopointonline.com/index.php?/registeruser/registerByEmail",
-        data: { email: $email.val() },
+        data: { email: $inputfield.val() },
         success: function (data) {
           console.log(data);
         },
@@ -27,11 +25,11 @@ $(function () {
       });
 
       //Storing the email value in localstorage.
-      localStorage.setItem("email", $email.val());
+      localStorage.setItem("email", $inputfield.val());
       //setting the value of text box to empty and placeholder value to enter otp.
-      $email.val("");
-      $email.attr("placeholder", "Enter OTP");
-      $otp.html("Verify OTP");
+      $inputfield.val("");
+      $inputfield.attr("placeholder", "Enter OTP");
+      $otpButton.html("Verify OTP");
     }
   });
 
@@ -41,16 +39,24 @@ $(function () {
         type: "POST",
         url:
           "http://app.pointtopointonline.com/index.php?/registeruser/verifyOTP",
-
-        // data: { otp: $email.val(), email: email },
-        data: { email: localStorage.getItem("email"), otp: $email.val() },
+        data: {
+          email: localStorage.getItem("email"),
+          otp: $inputfield.val(),
+        },
         success: function (data) {
           var response = JSON.parse(data);
           console.log(response.userId);
-          window.location.assign(
-            "http://app.pointtopointonline.com/index.php?/setup/account/" +
-              response.userId
-          );
+          //Checking if the entered otp is correct with the one which we are getting from response.
+          if (response.isOtpValid) {
+            $otpButton.html("Verifying...");
+            window.location.assign(
+              "http://app.pointtopointonline.com/index.php?/setup/account/" +
+                response.userId
+            );
+          } else {
+            alert("Incorrect otp. Try again");
+            $inputfield.val("");
+          }
         },
         dataType: "text",
         error: function () {

@@ -11,6 +11,7 @@ body {
 .first-row {
   background-color: rgb(63, 199, 154);
   padding: 100px;
+  margin-top: 50px;
 }
 
 .first-row h1 {
@@ -75,7 +76,7 @@ body {
 
 /*flip button */
 .buttonHolder {
-  width: 220px;
+  width: 240px;
   height: 40px;
   position: relative;
   margin: 0 auto 40px;
