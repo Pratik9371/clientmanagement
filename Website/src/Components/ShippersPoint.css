@@ -197,6 +197,9 @@ body {
 }
 
 .emailError,
-.otpError {
+.otpError,
+.resendOtpMsg {
   display: none;
+  font-size: 20px;
+  color: tomato;
 }

@@ -3,6 +3,7 @@ $(function () {
   var $otpButton = $("#otp");
   var $emailError = $(".emailError");
   var $otpError = $(".otpError");
+  var $resendOtpMsg = $(".resendOtpMsg");
 
   $("#addEmail").on("click", function () {
     if ($inputfield.val() == "") {
@@ -35,6 +36,12 @@ $(function () {
       $inputfield.val("");
       $inputfield.attr("placeholder", "Enter OTP");
       $otpButton.html("Verify OTP");
+
+      //For showing resend link after 45s.
+      setTimeout(function () {
+        $resendOtpMsg.css({ display: "block" });
+        $resendOtpMsg.show();
+      }, 45000);
     }
   });
 
@@ -55,6 +62,7 @@ $(function () {
           if (response.isOtpValid) {
             $otpButton.html("Verifying...");
             $otpError.css({ display: "none" });
+            $(".resendOtpMsg").hide();
             window.location.assign(
               "http://app.pointtopointonline.com/index.php?/setup/account/" +
                 response.userId
@@ -69,4 +77,28 @@ $(function () {
       });
     });
   });
+
+  $(document).ready(function () {
+    $(".resendOtpMsg").click(function () {
+      $.ajax({
+        type: "POST",
+        url:
+          "http://app.pointtopointonline.com/index.php?/registeruser/registerByEmail",
+        data: {
+          email: localStorage.getItem("email"),
+        },
+        success: function (data) {
+          console.log(data);
+        },
+        dataType: "text",
+      });
+    });
+  });
 });
+
+// function validateEmail($inputfield) {
+//   var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+//   return emailReg.test($inputfield);
+// }
+// else if (!validateEmail($inputfield.val())) {
+//   alert("Invalid");
