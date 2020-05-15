@@ -195,3 +195,8 @@ body {
     height: 350px;
   }
 }
+
+.emailError,
+.otpError {
+  display: none;
+}
