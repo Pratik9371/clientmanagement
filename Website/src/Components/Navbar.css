@@ -1,3 +1,8 @@
+.navbar{
+  background-color: #fff;
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.2)
+}
+
 .nav-links {
   color: rgb(146, 138, 138);
   padding: 20px;
