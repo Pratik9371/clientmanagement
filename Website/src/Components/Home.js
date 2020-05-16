@@ -13,13 +13,13 @@ class Home extends Component {
       <div className="container-fluid">
         <div className="row first-row justify-content-center">
           <div className="col-lg-6 text-light">
-            <h1 style={{ fontSize: "80px" }}>
-              Ready to get <br />
-              started?
+            <h1 style={{fontSize: "3.5rem"}}>
+              One stop for your Logistics Problem.
             </h1>
-            <p style={{ fontSize: "20px" }}>
-              Sign up to receive the latest news
+            <p style={{color: '#fff', fontSize: '1.5rem', padding: '40px 0;' }}>
+              Connect with our experts for the solutions.
             </p>
+            <button class="btn-white">Talk to us</button>
           </div>
           <div className="col-md-6">
             <img
@@ -33,45 +33,75 @@ class Home extends Component {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12 misson-row">
-            <h6 className="text-center text-success">OUR MISSION</h6> <br />
-            <p className="text-center">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-              quis arcu vulputate, ultrices quam sit amet, ullamcorper tellus.
-              Nullam eu imperdiet massa. Phasellus in nibh mauris. Phasellus
-              magna nisi, varius et nulla ac, ultricies rhoncus neque.{" "}
+          <div className="col-md-12 misson-row text-center">
+            <h2 className="text-center primary-text">Software for Logistics Enterprises</h2> <br />
+            <p className="" style={{maxWidth: "800px", margin: "40px auto"}}>
+              Shipper Point solves the modern problem in Logistics / Transport Industry. I/t ramp up your business by digitalizing your business activities.
+              Shipper Point comes with a complete suite for a Logistics /  Transport Enterprises, starting from the Order(LR) creation to Delivery(Runsheet) Report creation. The in-build Invocing module discard the 3rd party integration of any Billing softwre.Shipper Point also comes with a Customer Portal which enable your Customer to keep a track of their orders. 
             </p>
+            <button className="btn btn-primary text-center">Get in touch</button>
+            <img src="https://www.pinclipart.com/picdir/big/101-1013314_pc-mobile-tablet-png-clipart.png" style={{display: 'block', margin: '100px auto 10px', width: '70%'}} ></img>
           </div>
         </div>
-
+ 
         <div className="row pt-5">
+          <div class="col-md-12">
+
+          
+          <h2 className="text-center primary-text" style={{padding: '40px'}}>Build-in Features</h2>
+          <div className="row">
           <div className="col-md-4 text-center">
             <i class="fa fa-mobile fa-4x"></i>
-            <h3>Save time</h3>
+            <h4>Online Software (SAAS) Platform</h4>
             <p>
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim id est laborum
+              Your software is just a browser away. Manage your business on the go. 
+            </p>
+          </div>          
+          <div className="col-md-4 text-center">
+            <i class="fa fa-mobile fa-4x"></i>
+            <h4>Order(LR) Creation</h4>
+            <p>
+              Create the order in web or mobile with some clicks.
             </p>
           </div>
           <div className="col-md-4 text-center">
             <i class="fa fa-mobile fa-4x"></i>
-            <h3>Customization</h3>
+            <h4>Invoicing Module</h4>
             <p>
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim id est laborum
+              Just while you are accepting order, generate the invoice at the same platform.
             </p>
           </div>
-          <div className="col-md-4 text-center pb-5">
+          </div>
+
+
+        <div className="row">
+        <div className="col-md-4 text-center">
             <i class="fa fa-mobile fa-4x"></i>
-            <h3>Mobile friendly</h3>
+            <h4>Customer Portal</h4>
             <p>
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim id est laborum
+              Just like we keep you happy, keep your customers happy too. Customer Portal give your customer a clear visibilty of their orders
+            </p>
+          </div>
+          <div className="col-md-4 text-center">
+            <i class="fa fa-mobile fa-4x"></i>
+            <h4>E-POD</h4>
+            <p>
+              With our andriod application, upload the POD and enhance your customer experience.
+            </p>
+          </div>
+          <div className="col-md-4 text-center">
+            <i class="fa fa-mobile fa-4x"></i>
+            <h4>Delivery Runsheet</h4>
+            <p>
+              Shipper Point give you a seamless experience to create runsheet online.
             </p>
           </div>
         </div>
+          
+        </div>
+        </div>
 
-        <div className="row fourth-row justify-content-center">
+       {/* <div className="row fourth-row justify-content-center">
           <div className="col-md-12 text-center">
             <h5>SEE OUR VALUES</h5>
             <h1>Learn more about us</h1>
@@ -320,7 +350,7 @@ class Home extends Component {
           </div>
         </div>
         {/* Our team */}
-        <div className="text-center pt-5">
+        {/* <div className="text-center pt-5"> 
           <h1 className="pb-3">Our team</h1>
           <p>Meet some of our staff</p>
           <div className="row">
@@ -340,17 +370,17 @@ class Home extends Component {
               <p>Designer</p>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="row pt-5">
-          <div
-            className="col-md-12 text-center text-light p-5"
-            style={{ backgroundColor: " rgb(63, 168, 133)", height: "200px" }}
+          <div 
+            className="col-md-12 cta-last text-center text-light p-5"
+            style={{ backgroundColor: " rgb(63, 168, 133)", padding: "100px", backgroundImage:'https://psalmon2014.files.wordpress.com/2015/06/istock_000042328596_large.jpg?w=881&h=593' }}
           >
             <h1>Sign up and get a discount</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-              tellus.
+            <p style={{color: "#fff"}}>
+            We are offering a 10% discount now. Get exiting more exciting offers
             </p>
+            <button class='btn-white' style={{fontSize: '14px'}}>Get Offers</button>
           </div>
         </div>
 

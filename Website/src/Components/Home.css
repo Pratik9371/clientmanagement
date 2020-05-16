@@ -2,8 +2,12 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+p{
+  color: #717171
+
+}
 .first-row {
-  background-color: rgb(63, 168, 133);
+  background-color: #18a689;
   margin-top: 80px;
   padding: 100px;
 }
@@ -14,7 +18,7 @@
 }
 
 .fourth-row {
-  background-color: rgb(63, 168, 133);
+  background-color: #18a689;
   height: 800px;
   padding: 50px;
 }
@@ -25,9 +29,26 @@
 } */
 
 .btn {
-  color: rgb(63, 168, 133);
+  background-color: rgb(63, 168, 133);
+  color: #fff;
+  border: rgb(63, 168, 133);
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
+.btn-white{
+  color: #18a689;
+  background: #fff;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+}
 .box {
   margin: 10px;
   padding: 20px;
@@ -36,4 +57,20 @@
   background-color: white;
   border: none;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.primary-text{
+
+  color: #18a689;
+}
+
+.cta-last{
+  background-blend-mode: soft-light;
+    background-color: rgb(24, 166, 137);
+    background-size: cover;
+    padding: 100px;
+    background-attachment: fixed;
+    background-image: url(https://psalmon2014.files.wordpress.com/2015/06/istock_000042328596_large.jpg?w=881&h=593);
+    background-repeat: no-repeat;
+    background-position: bottom;
 }
